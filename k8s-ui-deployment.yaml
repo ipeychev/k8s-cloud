@@ -13,7 +13,7 @@ spec:
         app: ui
     spec:
       containers:
-      - name: api
+      - name: ui
         image: peychevi/k8s-ui:1.0.2
         ports:
         - containerPort: 3005
@@ -24,3 +24,7 @@ spec:
             value: "api-service"
           - name: API_PORT
             value: "80"
+      initContainers:
+      - name: check-api
+        image: busybox
+        command: ['sh', '-c', 'until nslookup api-service; do echo waiting for api; sleep 2; done;']
