@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: ipeychev-com
+  namespace: default
+spec:
+  secretName: ipeychev-com-tls
+  issuerRef:
+    name: letsencrypt-staging
+  commonName: ipeychev.com
+  dnsNames:
+  - ipeychev.com
+  - www.ipeychev.com

@@ -10,5 +10,4 @@ spec:
     targetPort: 3005
   selector:
     app: "ui"
-  type: "LoadBalancer"
-  loadBalancerIP: ""
+  type: "NodePort"

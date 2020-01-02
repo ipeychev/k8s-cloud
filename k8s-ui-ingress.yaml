@@ -1,0 +1,11 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ui-ingress
+  namespace: default
+spec:
+  tls:
+  - secretName: ipeychev-com-tls
+  backend:
+    serviceName: ui-service
+    servicePort: 80
