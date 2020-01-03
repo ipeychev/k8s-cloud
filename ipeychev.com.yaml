@@ -6,7 +6,7 @@ metadata:
 spec:
   secretName: ipeychev-com-tls
   issuerRef:
-    name: letsencrypt-staging
+    name: letsencrypt-production
   commonName: ipeychev.com
   dnsNames:
   - ipeychev.com
