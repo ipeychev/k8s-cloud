@@ -14,7 +14,22 @@ spec:
     spec:
       containers:
       - name: ui
-        image: peychevi/k8s-ui:1.0.2
+        image: peychevi/k8s-ui:1.0.3
+        imagePullPolicy: Always
+        livenessProbe:
+          httpGet:
+            path: /health-check
+            port: 3005
+            scheme: HTTP
+          initialDelaySeconds: 2
+          periodSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /health-check
+            port: 3005
+            scheme: HTTP
+          initialDelaySeconds: 2
+          periodSeconds: 5
         ports:
         - containerPort: 3005
         env:
