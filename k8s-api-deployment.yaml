@@ -12,18 +12,19 @@ spec:
       labels:
         app: api
     spec:
-      # volumes:
-      # - name: data
-      #   persistentVolumeClaim:
-      #     claimName: pvc1
+      volumes:
+      - name: data
+        persistentVolumeClaim:
+          claimName: pvc1
       containers:
       - name: api
         image: peychevi/k8s-api:1.0.2
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
         env:
           - name: PORT
             value: "3000"
-        # volumeMounts:
-        # - mountPath: /data
-        #   name: data
+        volumeMounts:
+        - mountPath: /data
+          name: data
