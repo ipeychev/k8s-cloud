@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ui
-        image: peychevi/k8s-ui:1.0.3
+        image: peychevi/k8s-ui:1.0.4
         imagePullPolicy: Always
         livenessProbe:
           httpGet:
@@ -34,11 +34,20 @@ spec:
         - containerPort: 3005
         env:
           - name: PORT
-            value: "3005"
+            valueFrom:
+              secretKeyRef:
+                name: ui-secret
+                key: PORT
           - name: API_HOST
-            value: "api-service"
+            valueFrom:
+              secretKeyRef:
+                name: ui-secret
+                key: API_HOST
           - name: API_PORT
-            value: "80"
+            valueFrom:
+              secretKeyRef:
+                name: ui-secret
+                key: API_PORT
       initContainers:
       - name: check-api
         image: busybox

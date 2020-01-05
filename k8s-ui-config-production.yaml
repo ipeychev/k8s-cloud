@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: ui-secret
+type: Opaque
+data:
+  API_HOST: YXBpLXNlcnZpY2U=
+  API_PORT: ODA=
+  PORT: MzAwNQ==
+  NODE_ENV: cHJvZHVjdGlvbg==
