@@ -39,6 +39,8 @@ spec:
             value: api-service
           - name: API_PORT
             value: "80"
+          - name: NODE_ENV
+            value: production
       initContainers:
       - name: check-api
         image: busybox
