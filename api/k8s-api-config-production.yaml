@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: ui-secret
+  name: api-secret
 type: Opaque
 data:
   NODE_ENV: cHJvZHVjdGlvbg==

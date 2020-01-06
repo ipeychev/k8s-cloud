@@ -34,20 +34,11 @@ spec:
         - containerPort: 3005
         env:
           - name: PORT
-            valueFrom:
-              secretKeyRef:
-                name: ui-secret
-                key: PORT
+            value: "3005"
           - name: API_HOST
-            valueFrom:
-              secretKeyRef:
-                name: ui-secret
-                key: API_HOST
+            value: api-service
           - name: API_PORT
-            valueFrom:
-              secretKeyRef:
-                name: ui-secret
-                key: API_PORT
+            value: "80"
       initContainers:
       - name: check-api
         image: busybox
