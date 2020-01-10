@@ -4,7 +4,7 @@ metadata:
   name: ipeychev-com
   namespace: default
 spec:
-  secretName: ipeychev-com-tls
+  secretName: ipeychev-com-tls-production
   issuerRef:
     name: letsencrypt-production
   commonName: ipeychev.com

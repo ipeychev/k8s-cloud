@@ -5,7 +5,7 @@ metadata:
   namespace: default
 spec:
   tls:
-  - secretName: ipeychev-com-tls
+  - secretName: ipeychev-com-tls-production
   backend:
     serviceName: ui-service
     servicePort: 80
