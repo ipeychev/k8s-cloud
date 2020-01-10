@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: ui
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: ui
@@ -40,7 +40,10 @@ spec:
           - name: API_PORT
             value: "80"
           - name: NODE_ENV
-            value: production
+            valueFrom:
+              secretKeyRef:
+                name: ui-secret
+                key: NODE_ENV
       initContainers:
       - name: check-api
         image: busybox
