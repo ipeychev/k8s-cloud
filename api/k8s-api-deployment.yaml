@@ -15,7 +15,7 @@ spec:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: pvc1
+          claimName: nfs
       containers:
       - name: api
         image: peychevi/k8s-api:1.0.3
