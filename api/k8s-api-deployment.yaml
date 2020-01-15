@@ -1,16 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api
+  name: api-1.0.3
+  labels:
+    ver: "1.0.3"
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: api-1.0.3
+      ver: "1.0.3"
   template:
     metadata:
       labels:
-        app: api
+        app: api-1.0.3
+        ver: "1.0.3"
     spec:
       volumes:
       - name: data

@@ -1,16 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ui
+  name: ui-1.0.4
+  labels:
+    ver: "1.0.4"
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: ui
+      app: ui-1.0.4
+      ver: "1.0.4"
   template:
     metadata:
       labels:
-        app: ui
+        app: ui-1.0.4
+        ver: "1.0.4"
     spec:
       containers:
       - name: ui
