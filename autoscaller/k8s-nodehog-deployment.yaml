@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodehog-0.0.1
+  labels:
+    ver: "0.0.1"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nodehog-0.0.1
+      ver: "0.0.1"
+  template:
+    metadata:
+      labels:
+        app: nodehog-0.0.1
+        ver: "0.0.1"
+    spec:
+      containers:
+      - name: nodehog
+        image: peychevi/k8s-nodehog:0.0.1
+        imagePullPolicy: Always
