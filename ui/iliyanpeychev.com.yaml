@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: iliyanpeychev.com
+  namespace: default
+spec:
+  secretName: iliyanpeychev-com-tls-production
+  issuerRef:
+    name: letsencrypt-production
+  commonName: iliyanpeychev.com
+  dnsNames:
+  - iliyanpeychev.com
+  - www.iliyanpeychev.com
