@@ -2,10 +2,20 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: ui-ingress
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
   namespace: default
 spec:
   tls:
-  - secretName: ipeychev-com-tls-production
-  backend:
-    serviceName: ui-service
-    servicePort: 80
+  - hosts:
+    - iliyanpeychev.com
+    secretName: iliyanpeychev-com-tls-production
+  rules:
+  - host: iliyanpeychev.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ui-service
+          servicePort: 80
