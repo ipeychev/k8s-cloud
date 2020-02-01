@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: managed-ssd-storage-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: managed-ssd-storage
+  resources:
+    requests:
+      storage: 1Gi
