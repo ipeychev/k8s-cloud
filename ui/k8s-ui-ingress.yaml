@@ -6,12 +6,15 @@ metadata:
     kubernetes.io/ingress.class: nginx
   namespace: default
 spec:
-  tls:
-  - hosts:
-    - iliyanpeychev.com
-    secretName: iliyanpeychev-com-tls-production
   rules:
-  - host: iliyanpeychev.com
+  - host: portal.iliyanpeychev.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ui-service
+          servicePort: 80
+  - host: ppt.iliyanpeychev.com
     http:
       paths:
       - path: /

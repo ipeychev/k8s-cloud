@@ -9,5 +9,5 @@ spec:
     port: 80
     targetPort: 3005
   selector:
-    app: "ui-1.0.4"
+    app: "ui-1.0.6"
   type: "NodePort"
