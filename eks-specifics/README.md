@@ -18,6 +18,10 @@ After changing config values or when there is a new version:
 
 1. Upgrade via Helm
 
+```sh
+$ helm upgrade dxp -f nginx-ingress-config.yaml stable/nginx-ingress
+```
+
 # Uninstall
 
 1. Uninstall via Helm
