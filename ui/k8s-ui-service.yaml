@@ -3,13 +3,11 @@ kind: "Service"
 metadata:
   name: "ui-service"
   namespace: "default"
-  annotations:
-    beta.cloud.google.com/backend-config: '{"ports": {"80":"ui-backend-config"}}'
 spec:
   ports:
   - protocol: "TCP"
     port: 80
     targetPort: 3005
   selector:
-    app: "ui-1.0.4"
+    app: "ui-1.0.6"
   type: "NodePort"
