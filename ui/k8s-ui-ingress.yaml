@@ -4,20 +4,20 @@ metadata:
   name: ui-ingress
   namespace: default
 spec:
-  tls:
-  - secretName: ipeychev-com-tls-production
   rules:
   - host: ipeychev.com
     http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: ui-service
           servicePort: 80
+        path: /*
   - host: www.ipeychev.com
     http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: ui-service
           servicePort: 80
+        path: /*
+  tls:
+  - secretName: ipeychev-com-tls-production
