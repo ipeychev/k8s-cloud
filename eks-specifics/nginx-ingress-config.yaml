@@ -181,7 +181,9 @@ controller:
   ## Node labels for controller pod assignment
   ## Ref: https://kubernetes.io/docs/user-guide/node-selection/
   ##
-  nodeSelector: {}
+  nodeSelector: {
+    kubernetes.io/os: linux
+  }
 
   ## Liveness and readiness probe values
   ## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle/#container-probes
@@ -232,10 +234,7 @@ controller:
   service:
     enabled: true
 
-    annotations: {
-      # by default the type is elb (classic load balancer).
-      service.beta.kubernetes.io/aws-load-balancer-type: nlb
-    }
+    annotations: {}
     labels: {}
     ## Deprecated, instead simply do not provide a clusterIP value
     omitClusterIP: false
