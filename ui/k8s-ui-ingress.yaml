@@ -5,9 +5,7 @@ metadata:
   namespace: default
 spec:
   tls:
-  - hosts:
-    - ipeychev.com
-    secretName: ipeychev-com-tls-production
+  - secretName: ipeychev-com-tls-production
   rules:
   - host: ipeychev.com
     http:
