@@ -5,3 +5,4 @@ metadata:
 type: Opaque
 data:
   NODE_ENV: cHJvZHVjdGlvbg==
+  ENABLE_REDIRECT_TO_HTTPS: dHJ1ZQ==

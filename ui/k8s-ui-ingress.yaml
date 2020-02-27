@@ -16,3 +16,10 @@ spec:
         backend:
           serviceName: ui-service
           servicePort: 80
+  - host: www.ipeychev.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: ui-service
+          servicePort: 80
