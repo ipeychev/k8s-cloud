@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: irinapeycheva.com
+  namespace: default
+spec:
+  secretName: irinapeycheva-com-tls-production
+  issuerRef:
+    name: letsencrypt-production
+  commonName: irinapeycheva.com
+  dnsNames:
+  - irinapeycheva.com
+  - www.irinapeycheva.com
