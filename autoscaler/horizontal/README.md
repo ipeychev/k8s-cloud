@@ -1,1 +1,1 @@
-The service what created by Jared Gorski: https://jaredgorski.com/work/nodehog
+The service what created by Jared Gorski: https://github.com/jaredgorski/nodehog
